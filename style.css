@@ -1,0 +1,268 @@
+/* ------------------------
+   GLOBAL SETTINGS
+------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #020b1a;
+  color: #e0e0e0;
+  min-height: 100vh;
+  overflow-x: hidden;
+  transition: background 0.3s ease;
+}
+
+.main-bg {
+  background: radial-gradient(circle at top, #02142b, #010915);
+}
+
+/* ------------------------
+   LOGIN / SIGNUP PAGE
+------------------------- */
+.login-container {
+  text-align: center;
+  margin-top: 10%;
+  padding: 40px;
+  background: rgba(0, 15, 40, 0.85);
+  width: 90%;
+  max-width: 450px;
+  border-radius: 15px;
+  border: 1px solid #00e5ff;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 0 25px #00e5ff40;
+  animation: fadeIn 1.2s ease;
+}
+
+.login-title {
+  font-size: 2rem;
+  color: #00e5ff;
+  margin-bottom: 25px;
+}
+
+.login-title span {
+  color: #ffca28;
+}
+
+.login-form,
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+input {
+  padding: 12px 14px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  background: #041021;
+  color: #fff;
+  border: 1px solid #00e5ff40;
+  outline: none;
+  transition: 0.2s ease;
+}
+
+input:focus {
+  border-color: #00e5ff;
+  box-shadow: 0 0 10px #00e5ff60;
+}
+
+button {
+  padding: 12px;
+  background: linear-gradient(90deg, #00e5ff, #00bfa6);
+  border: none;
+  border-radius: 6px;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+button:hover {
+  background: linear-gradient(90deg, #00bfa6, #00e5ff);
+  transform: scale(1.05);
+}
+
+.switch-text {
+  color: #aaa;
+  font-size: 0.9rem;
+}
+
+.switch-text a {
+  color: #00e5ff;
+  text-decoration: none;
+}
+
+.switch-text a:hover {
+  text-decoration: underline;
+}
+
+.error-text {
+  color: #ff5252;
+  font-size: 0.9rem;
+}
+
+/* Hidden class */
+.hidden {
+  display: none !important;
+}
+
+/* ------------------------
+   NAVBAR
+------------------------- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 60px;
+  background: rgba(0, 0, 0, 0.6);
+  border-bottom: 1px solid #00e5ff40;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo {
+  color: #00e5ff;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+}
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+  gap: 25px;
+}
+
+.navbar a {
+  color: #e0e0e0;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+.navbar a:hover {
+  color: #00e5ff;
+  text-shadow: 0 0 10px #00e5ff;
+}
+
+/* ------------------------
+   HERO SECTION
+------------------------- */
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+  animation: fadeIn 1.2s ease;
+}
+
+.main-title {
+  font-size: 2.4rem;
+  color: #00e5ff;
+  margin-bottom: 20px;
+}
+
+.intro {
+  font-size: 1.1rem;
+  color: #ccc;
+  max-width: 800px;
+  margin: 0 auto 40px;
+  line-height: 1.6;
+}
+
+.subheadings h2 {
+  color: #ffca28;
+  margin-top: 25px;
+}
+
+.subheadings p {
+  color: #b0bec5;
+  max-width: 750px;
+  margin: 10px auto;
+  line-height: 1.6;
+}
+
+/* ------------------------
+   BUILD SECTION
+------------------------- */
+.build-section {
+  background: #010c20;
+  padding: 80px 20px;
+  text-align: center;
+  border-top: 1px solid #00e5ff30;
+}
+
+.build-section h1 {
+  color: #00e5ff;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.build-section p {
+  color: #b0bec5;
+  max-width: 800px;
+  margin: 0 auto 40px;
+  line-height: 1.6;
+}
+
+.code-example {
+  background: #02142b;
+  color: #00ffae;
+  text-align: left;
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid #00e5ff40;
+  box-shadow: 0 0 20px #00e5ff20;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.code-example:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 30px #00e5ff40;
+}
+
+.code-example h2 {
+  color: #ffca28;
+  margin-bottom: 10px;
+}
+
+pre {
+  background: #000d1a;
+  color: #00ffae;
+  padding: 15px;
+  border-radius: 6px;
+  overflow-x: auto;
+  font-family: "Courier New", monospace;
+}
+
+/* ------------------------
+   FOOTER
+------------------------- */
+.footer {
+  text-align: center;
+  padding: 25px;
+  font-size: 0.9rem;
+  color: #90a4ae;
+  border-top: 1px solid #00e5ff40;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+/* ------------------------
+   ANIMATIONS
+------------------------- */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
