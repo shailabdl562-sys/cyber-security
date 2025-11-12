@@ -6,8 +6,8 @@
   <title>Cyber Security - Protecting the Digital Future</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-<body>
 
+<body class="login-page">
   <!-- LOGIN / SIGNUP PAGE -->
   <div class="login-container">
     <h1 class="login-title">Welcome to <span>Cyber Security</span></h1>
@@ -48,7 +48,9 @@
     <section id="contents" class="hero">
       <div class="content">
         <h1 class="main-title">The Principles of Cyber Security</h1>
-        <p class="intro">Cyber Security protects systems, networks, and data from digital attacks that aim to access, change, or destroy sensitive information.</p>
+        <p class="intro">
+          Cyber Security protects systems, networks, and data from digital attacks that aim to access, change, or destroy sensitive information.
+        </p>
 
         <div class="subheadings">
           <h2>1. Protecting Personal Data</h2>
@@ -130,6 +132,7 @@ print(is_safe_input("DROP TABLE users;"))     # 🚫 Dangerous
     </footer>
   </div>
 
+  <!-- SCRIPT -->
   <script>
     const loginForm = document.querySelector('.login-form');
     const signupForm = document.querySelector('.signup-form');
@@ -181,6 +184,7 @@ print(is_safe_input("DROP TABLE users;"))     # 🚫 Dangerous
       if (email === savedEmail && pass === savedPass && email) {
         loginContainer.classList.add('hidden');
         mainSite.classList.remove('hidden');
+        document.body.classList.remove('login-page');
         document.body.classList.add('main-bg');
       } else {
         errorText.textContent = '❌ Invalid Email or Password!';
@@ -192,6 +196,7 @@ print(is_safe_input("DROP TABLE users;"))     # 🚫 Dangerous
       e.preventDefault();
       mainSite.classList.add('hidden');
       loginContainer.classList.remove('hidden');
+      document.body.classList.add('login-page');
       document.body.classList.remove('main-bg');
       loginForm.reset();
     };
