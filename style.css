@@ -16,18 +16,63 @@ body {
   transition: background 0.3s ease;
 }
 
-.main-bg {
-  background: radial-gradient(circle at top, #02142b, #010915);
+/* ------------------------
+   LOGIN PAGE (Beach Waves)
+------------------------- */
+body.login-page {
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+  background: linear-gradient(to bottom, #0077b6, #001d3d);
 }
 
-/* ------------------------
-   LOGIN / SIGNUP PAGE
-------------------------- */
+/* Animated beach wave background (smooth parallax style) */
+body.login-page::before,
+body.login-page::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 200%;
+  height: 100%;
+  bottom: 0;
+  background: url("https://svgshare.com/i/16W8.svg") repeat-x;
+  background-size: 50% 100%;
+  opacity: 0.4;
+  animation: waveMove 18s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
+  transform: translate3d(0, 0, 0);
+  z-index: 0;
+}
+
+/* Second layer for depth */
+body.login-page::after {
+  opacity: 0.25;
+  animation: waveMove2 24s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
+}
+
+@keyframes waveMove {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-25%, 0, 0);
+  }
+}
+
+@keyframes waveMove2 {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+/* Login container styling */
 .login-container {
   text-align: center;
   margin-top: 10%;
   padding: 40px;
-  background: rgba(0, 15, 40, 0.85);
+  background: rgba(0, 15, 40, 0.75);
   width: 90%;
   max-width: 450px;
   border-radius: 15px;
@@ -36,6 +81,8 @@ body {
   margin-right: auto;
   box-shadow: 0 0 25px #00e5ff40;
   animation: fadeIn 1.2s ease;
+  position: relative;
+  z-index: 2;
 }
 
 .login-title {
@@ -152,12 +199,33 @@ button:hover {
 }
 
 /* ------------------------
-   HERO SECTION
+   HERO SECTION (Coding Lab)
 ------------------------- */
 .hero {
   text-align: center;
   padding: 80px 20px;
   animation: fadeIn 1.2s ease;
+  background: url("https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1920&q=80")
+    no-repeat center center fixed;
+  background-size: cover;
+  position: relative;
+  color: #e0e0e0;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 10, 25, 0.7);
+  z-index: 0;
+}
+
+.hero * {
+  position: relative;
+  z-index: 1;
 }
 
 .main-title {
@@ -187,13 +255,32 @@ button:hover {
 }
 
 /* ------------------------
-   BUILD SECTION
+   BUILD SECTION (Coding Lab)
 ------------------------- */
 .build-section {
-  background: #010c20;
+  background: url("https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1920&q=80")
+    no-repeat center center fixed;
+  background-size: cover;
   padding: 80px 20px;
   text-align: center;
   border-top: 1px solid #00e5ff30;
+  position: relative;
+}
+
+.build-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 10, 25, 0.7);
+  z-index: 0;
+}
+
+.build-section * {
+  position: relative;
+  z-index: 1;
 }
 
 .build-section h1 {
@@ -210,7 +297,7 @@ button:hover {
 }
 
 .code-example {
-  background: #02142b;
+  background: rgba(2, 20, 43, 0.85);
   color: #00ffae;
   text-align: left;
   max-width: 800px;
